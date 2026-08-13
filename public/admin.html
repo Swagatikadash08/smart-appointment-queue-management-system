@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+  <title>Smart Queue — Admin Panel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-page="admin">
+
+  <!-- ================= TOP BAR ================= -->
+  <nav class="topbar">
+    <div class="brand-inline">
+      <div class="logo small">SQ</div>
+      <div>
+        <strong>Smart Queue</strong>
+        <div class="muted small">Administrator Control Panel</div>
+      </div>
+    </div>
+
+    <div class="right-controls">
+      <span id="adminLabel" class="muted">Loading...</span>
+
+      <button id="btn-logout-admin" class="btn ghost">Logout</button>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN ================= -->
+  <main class="container">
+
+    <!-- ================= LIVE QUEUE ================= -->
+    <section class="card">
+      <h3>Live Service Queues</h3>
+      <p class="muted small">
+        Monitor and control real-time queues. Mark users as served or cancel appointments.
+      </p>
+
+      <div class="row">
+        <select id="admin-svc">
+          <option disabled selected>Select Service</option>
+        </select>
+
+        <input id="admin-date" type="date" />
+
+        <button id="refresh-queues" class="btn ghost">
+          Refresh
+        </button>
+      </div>
+
+      <div id="admin-queues" class="list"></div>
+    </section>
+
+    <!-- ================= ACTIVITY LOG ================= -->
+    <section class="card" style="margin-top:20px">
+      <h3>Today’s Activity Log</h3>
+      <p class="muted small">
+        System-wide actions and queue updates recorded in real time.
+      </p>
+
+      <div id="activity-log" class="list"></div>
+    </section>
+
+  </main>
+
+  
+  <!-- <script src="/sockets/queueSocket.js"></script> -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/socket.js"></script>
+  <script src="/js/app.js"></script>
+
+
+</body>
+</html>
+

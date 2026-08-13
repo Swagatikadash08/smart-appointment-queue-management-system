@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Smart Queue — USER Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body data-page="dashboard">
+    <!-- ================= TOP BAR ================= -->
+    <nav class="topbar">
+      <div class="brand-inline">
+        <div class="logo small">SQ</div>
+        <div>
+          <strong>Smart Queue</strong>
+          <div class="muted small">User Dashboard</div>
+        </div>
+      </div>
+
+      <div class="right-controls">
+        <span id="userLabel" class="muted small">Not signed in</span>
+        <button id="btn-logout" class="btn ghost">Logout</button>
+      </div>
+    </nav>
+
+    <!-- ================= MAIN ================= -->
+    <main class="container">
+      <div class="grid-2">
+        <!-- ================= BOOK APPOINTMENT ================= -->
+        <section class="card">
+          <h3>Book Appointment</h3>
+
+          <p class="muted small">
+            Select a service, choose a slot, and join the live queue instantly.
+          </p>
+
+          <!-- Step 1 -->
+          <label>Service</label>
+          <select id="svc-select">
+            <option disabled selected>Select a service</option>
+          </select>
+
+          <!-- Step 2 -->
+          <label>Date</label>
+          <input id="date" type="date" />
+
+          <!-- Step 3 -->
+          <label>Available Slot</label>
+          <select id="slot-select">
+            <option disabled selected>Select a time slot</option>
+          </select>
+
+          <!-- User Info -->
+          <label>Full Name</label>
+          <input id="cust-name" placeholder="Your full name" />
+
+          <label>Email</label>
+          <input id="cust-email" placeholder="Email (optional)" />
+
+          <!-- Actions -->
+          <div class="row">
+            <button id="btn-book" class="btn">Confirm Booking</button>
+            <button id="btn-view-queue" class="btn ghost">
+              View Live Queue
+            </button>
+          </div>
+
+          <!-- ETA -->
+          <div class="card" style="margin-top: 14px; background: #0b2333">
+            <strong>Estimated Waiting Time</strong>
+            <p id="book-eta" class="muted small" style="margin: 6px 0 0">
+              ETA will appear after booking
+            </p>
+          </div>
+        </section>
+
+        <!-- ================= RIGHT COLUMN ================= -->
+        <section class="card my-appointments">
+          <!-- MY APPOINTMENTS -->
+          <h3>My Appointments</h3>
+          <p class="muted small">Manage your appointments.</p>
+
+          <div class="appointment-filters">
+            <select id="filter-date">
+              <option value="all">All Dates</option>
+              <option value="today">Today</option>
+              <option value="tomorrow">Tomorrow</option>
+              <option value="past">Past</option>
+            </select>
+
+            <select id="filter-status">
+              <option value="all">All Status</option>
+              <option value="upcoming">Upcoming</option>
+              <option value="served">Served</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+
+            <select id="filter-service">
+              <option value="all">All Services</option>
+            </select>
+          </div>
+
+          <div id="my-list" class="list"></div>
+
+          <hr />
+
+          <!-- LIVE QUEUE -->
+          <h3>Live Queue Status</h3>
+          <p class="muted small">
+            Track real-time queue position and estimated time.
+          </p>
+
+          <div class="row">
+            <select id="q-svc">
+              <option disabled selected>Service</option>
+            </select>
+            <input id="q-date" type="date" />
+          </div>
+
+          <div id="queue-list" class="list"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/socket.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

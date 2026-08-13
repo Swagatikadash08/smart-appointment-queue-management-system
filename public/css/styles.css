@@ -1,0 +1,867 @@
+
+/* =========================================================
+   Smart Queue Management System – FINAL UI THEME
+   Colors:
+   Dark Blue   : #0A1828
+   Turquoise   : #178582
+   Gold        : #BFA181
+   ========================================================= */
+
+:root {
+  --bg: #0a1828;
+  --bg-soft: #0d2236;
+
+  --accent: #178582;
+  --accent-soft: rgba(23, 133, 130, 0.15);
+
+  --gold: #bfa181;
+  --gold-soft: rgba(191, 161, 129, 0.15);
+
+  --card: #0f2736;
+  --border: rgba(255, 255, 255, 0.06);
+
+  --text-main: #e6eef2;
+  --text-muted: #94a6ad;
+
+  --radius: 16px;
+  --max: 1150px;
+
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* ==================== RESET ==================== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    circle at top,
+    #0d2236 0%,
+    #06121c 60%
+  );
+  background-attachment: fixed;
+  color: var(--text-main);
+}
+
+/* html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #02121b 130%);
+  color: var(--text-main);
+} */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ==================== LAYOUT ==================== */
+.container {
+  max-width: var(--max);
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 18px;
+}
+
+/* ==================== TOP BAR ==================== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 24, 40, 0.95),
+    rgba(10, 24, 40, 0.7)
+  );
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+}
+
+.brand-inline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ==================== LOGO ==================== */
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 20px;
+  background: linear-gradient(135deg, var(--accent), var(--gold));
+  color: #02121b;
+  box-shadow:
+    0 0 0 4px rgba(23,133,130,0.18),
+    0 12px 30px rgba(0,0,0,0.6);
+}
+
+.logo.small {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+/* ==================== CARDS ==================== */
+.card {
+  background: linear-gradient(180deg, var(--card), #0b1f30);
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.auth-card {
+  width: 420px;
+  border: 1px solid rgba(191,161,129,0.25);
+}
+
+/* Section headers */
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  padding-left: 10px;
+  border-left: 4px solid var(--accent);
+}
+
+/* ==================== TEXT ==================== */
+.muted {
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: 12px;
+}
+
+/* ==================== FORMS ==================== */
+.form label {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  background: linear-gradient(135deg, #178582, #0fb9a8);
+  color: #041414;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(23,133,130,0.35);
+}
+
+.btn.gold {
+  background: linear-gradient(135deg, #bfa181, #d6b98c);
+  color: #1a1208;
+}
+
+.btn.gold:hover {
+  box-shadow: 0 8px 20px rgba(191,161,129,0.35);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.btn.ghost:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-main);
+}
+
+/* ==================== ROWS & LISTS ==================== */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    transparent
+  );
+  border: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+.list .item:hover {
+  background: rgba(23,133,130,0.06);
+}
+
+/* ==================== BADGES ==================== */
+.badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ==================== TABS ==================== */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.tab.active {
+  background: linear-gradient(
+    90deg,
+    rgba(23,133,130,0.12),
+    rgba(191,161,129,0.08)
+  );
+  color: var(--text-main);
+}
+
+/* ==================== ADMIN HIGHLIGHTS ==================== */
+[data-page="admin"] .card h3 {
+  border-left-color: var(--gold);
+}
+
+/* ==================== UTIL ==================== */
+.hidden {
+  display: none;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 980px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    width: 100%;
+  }
+}
+
+
+/* ============================= */
+/* DARK THEME SELECT / OPTIONS   */
+/* ============================= */
+
+select {
+  background-color: #0A1828;        /* Dark blue */
+  color: #E6F1F1;                   /* Light text */
+  border: 1px solid #178582;        /* Turquoise border */
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;                /* remove default arrow */
+  background-image:
+    linear-gradient(45deg, transparent 50%, #BFA181 50%),
+    linear-gradient(135deg, #BFA181 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(1em + 2px),
+    calc(100% - 13px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+/* Dropdown options */
+select option {
+  background-color: #0A1828;        /* Dark dropdown */
+  color: #E6F1F1;
+}
+
+/* Hover state */
+select:hover {
+  border-color: #BFA181;            /* Gold highlight */
+}
+
+/* Focus state */
+select:focus {
+  border-color: #BFA181;
+  box-shadow: 0 0 0 2px rgba(191, 161, 129, 0.3);
+}
+
+/* Disabled option */
+select option:disabled {
+  color: #6c7a86;
+}
+
+/* ============================= */
+/* INPUT FIELDS (CONSISTENCY)    */
+/* ============================= */
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+  background-color: #0A1828;
+  color: #E6F1F1;
+  border: 1px solid #178582;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #7fa9a7;
+}
+
+input:focus {
+  border-color: #BFA181;
+  box-shadow: 0 0 0 2px rgba(191, 161, 129, 0.3);
+  outline: none;
+}
+
+/* ================================================= */
+/* DASHBOARD UI – SIZE, SPACING & LIGHTNESS FIX     */
+/* ================================================= */
+
+/* ---------- Cards: smaller & lighter ---------- */
+.card {
+  padding: 14px 16px; /* smaller box */
+  background: linear-gradient(
+    180deg,
+    rgba(28, 64, 90, 0.75),
+    rgba(18, 48, 70, 0.75)
+  );
+}
+
+/* ---------- Section headings ---------- */
+.card h3 {
+  font-size: 15.5px;      /* slightly smaller */
+  margin-bottom: 8px;
+  border-left-color: var(--gold); /* more gold usage */
+}
+
+/* ---------- Description text ---------- */
+.card p,
+.muted {
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+/* ---------- Form spacing (KEY CHANGE) ---------- */
+.form label {
+  margin-top: 16px;       /* more gap between sections */
+  margin-bottom: 6px;
+  font-size: 12.5px;
+}
+
+/* Inputs & selects spacing */
+input,
+select {
+  margin-bottom: 14px;   /* breathing space */
+  padding: 9px 11px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.06); /* lighter input bg */
+}
+
+/* ---------- Buttons: smaller ---------- */
+.btn {
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 9px;
+}
+
+/* Primary button: subtle gold glow */
+.btn:not(.ghost):hover {
+  box-shadow: 0 6px 14px rgba(191, 161, 129, 0.3);
+}
+
+/* ---------- Appointment items ---------- */
+.list .item {
+  padding: 10px 12px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+/* Cancel button */
+.list .item .btn.ghost {
+  font-size: 12px;
+  padding: 5px 9px;
+}
+
+/* ---------- ETA card lighter ---------- */
+.card .card {
+  background: rgba(255, 255, 255, 0.045);
+  padding: 12px;
+}
+
+/* ---------- Live queue filter spacing ---------- */
+.row {
+  gap: 12px;
+}
+
+/* ---------- Topbar slightly tighter ---------- */
+.topbar {
+  padding: 10px 16px;
+}
+
+.topbar strong {
+  font-size: 14px;
+}
+
+.topbar .muted {
+  font-size: 12px;
+}
+
+/* ---------- Gold separators ---------- */
+hr {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(191, 161, 129, 0.5),
+    transparent
+  );
+}
+
+/* ================================ */
+/* DATE INPUT – LIGHTER & CLEANER  */
+/* ================================ */
+
+input[type="date"] {
+  background-color: rgba(255, 255, 255, 0.08); /* lighter than before */
+  color: #e6f1f1;
+  border: 1px solid var(--teal);
+  padding: 9px 11px;
+  font-size: 13px;
+}
+
+/* Calendar icon (Chrome / Edge) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(75%) sepia(20%) saturate(300%)
+          hue-rotate(10deg); /* subtle gold-teal look */
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+/* Focus state */
+input[type="date"]:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(191, 161, 129, 0.25);
+}
+
+/* Placeholder-like empty state (Firefox) */
+input[type="date"]:not(:valid) {
+  color: #9bb6b4;
+}
+
+.appt-status {
+  margin-left: 8px;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.appt-served {
+  opacity: 0.6;
+}
+
+.appt-served .appt-status {
+  background: rgba(23, 133, 130, 0.25);
+  color: #178582;
+}
+
+.appt-cancelled {
+  opacity: 0.45;
+}
+
+.appt-cancelled .appt-status {
+  background: rgba(191, 161, 129, 0.25);
+  color: #BFA181;
+}
+
+.appt-queued .appt-status {
+  background: rgba(23, 133, 130, 0.3);
+  color: #1fd1c8;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #178582;
+  color: #178582;
+}
+
+.btn.ghost.danger {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+
+
+/* Appointment action buttons */
+.appointment-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.appointment-actions button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.btn-reschedule {
+  background: transparent;
+  border: 1px solid #178582;
+  color: #178582;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: 1px solid #BFA181;
+  color: #BFA181;
+}
+
+.btn-qr {
+  background: #178582;
+  color: #0A1828;
+  border: none;
+}
+
+.appointment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.appointment-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.appointment-meta {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Login page lighter inputs */
+[data-page="index"] input[type="email"],
+[data-page="index"] input[type="password"] {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+
+.appointment-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.appt-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.appt-service {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.appt-datetime {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.appointment-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+/* Top row: Reschedule + Cancel */
+.appt-actions-top {
+  display: flex;
+  gap: 6px;
+}
+
+/* Bottom row: Status + QR */
+.appt-actions-bottom {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.appt-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #1a3446, #142836);
+  margin-bottom: 14px;
+}
+
+.appt-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.appt-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.appt-service {
+  font-size: 13px;
+  color: #9fd6cc;
+}
+
+.appt-datetime {
+  font-size: 12px;
+  color: #9aaec0;
+}
+
+.appt-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.appt-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.appt-service {
+  font-size: 13px;
+  color: #9fd6cc;
+}
+
+.appt-datetime {
+  font-size: 12px;
+  color: #9aaec0;
+}
+
+.appt-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-width: 170px;
+}
+
+.appt-actions-top,
+.appt-actions-bottom {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.appt-status {
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.appt-status.queued {
+  background: #1f7f6f;
+  color: #bff3e6;
+}
+
+.appt-status.served {
+  background: #2d5f8a;
+  color: #cfe7ff;
+}
+
+.appt-status.cancelled {
+  background: #5a4a2a;
+  color: #f2d7a0;
+}
+.appt-item button {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+/* ================= ADMIN QUEUE ACTIONS ================= */
+
+.admin-actions-row {
+  display: flex;
+  flex-direction: row;   /* row-wise */
+  gap: 10px;
+  align-items: center;
+}
+
+.admin-actions-row button {
+  min-width: 80px;
+  padding: 6px 14px;
+}
+
+/* ================= ACTIVITY LOG ================= */
+
+.activity-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  background: rgba(255,255,255,0.04);
+}
+
+.activity-time {
+  font-size: 12px;
+  opacity: 0.65;
+  min-width: 170px;
+}
+
+.activity-message {
+  font-weight: 500;
+}
+
+/* Highlight types */
+.activity-item.served {
+  border-left: 4px solid #178582;
+  color: #bff3e6;
+}
+
+.activity-item.cancelled {
+  border-left: 4px solid #bfa181;
+  color: #f2d7a0;
+}
+
+.activity-item.rescheduled {
+  border-left: 4px solid #1fd1c8;
+  color: #c8fff6;
+}
+
+.appointment-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.appointment-filters select {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #eafcff;
+}
+
+.appointment-filters select option {
+  background: #0e2230;
+}
+
+.activity-filters {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0 18px;
+}
+
+.activity-filters select {
+  background: #132f43;
+  border: 1px solid #1aa3a3;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
